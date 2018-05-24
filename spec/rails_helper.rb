@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+# require 'webmock/rspec'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/cassettes"
@@ -60,4 +61,17 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
+    {"uid"=>"14942680",
+      "info"=>
+      {"nickname"=>"icorson3",
+        "name"=>"Ilana Corson"},
+      "credentials"=>
+        {"token"=>ENV["GITHUB_TOKEN"]}
+      }
+    )
 end
