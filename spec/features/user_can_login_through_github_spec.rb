@@ -11,10 +11,10 @@ describe "as a user" do
 
     expect(page).to have_content("icorson3")
 
-  #   within(".popular-repos", match: :first) do
-  #     expect(page).to have_content("sass_workshop")
-  #   end
-  #
+    within(".popular-repos", match: :first) do
+      expect(page).to have_content("sass_workshop")
+    end
+
   #   within(".contributions") do
   #     expect(page).to have_content("586 contributions in the last year")
   #   end

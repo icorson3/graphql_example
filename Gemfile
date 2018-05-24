@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'omniauth-github'
+gem 'faraday'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -43,9 +44,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'vcr'
   gem 'faker'
-  gem 'webmock'
   gem 'factory_bot_rails'
 end
 
