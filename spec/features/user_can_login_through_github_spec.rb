@@ -10,8 +10,6 @@ describe "as a user" do
     click_on "Log In through Github"
 
     expect(page).to have_content("icorson3")
-    expect(page).to have_content("Ilana Corson")
-    expect(page).to have_content("Denver, CO")
 
   #   within(".popular-repos", match: :first) do
   #     expect(page).to have_content("sass_workshop")
