@@ -1,7 +1,7 @@
 <%= current_user.username %>
-
-<section class="popular-repos">
-  <% @repos.each do |repo| %>
-    <%#= repo.title %>
-  <% end %>
-</section>
+<% @repos.each do |repo| %>
+<ul class="popular-repos">
+  <li>Name: <%= repo.name %></li>
+  <li>Forks: <%= repo.forks %></li>
+</ul>
+<% end %>
