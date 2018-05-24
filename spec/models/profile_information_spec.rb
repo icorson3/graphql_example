@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe ProfileInformation do
   it "returns repos" do
-    expect(ProfileInformation.new.repos).to eq([Repository, Repository, Repository])
+    user = stub_omniauth
+    expect(ProfileInformation.new(user).repos).to eq([Repository, Repository, Repository])
   end
 end
