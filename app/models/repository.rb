@@ -1,8 +1,9 @@
 class Repository
-  attr_reader :name, :owner, :forks
+  attr_reader :name, :owner, :forks, :stargazers, :languages
   def initialize(raw_data)
     @name = raw_data[:node][:name]
-    @owner = raw_data[:node][:owner][:login]
     @forks = raw_data[:node][:forkCount]
+    @stargazers = raw_data[:node][:stargazers]
+    @languages = raw_data[:node][:languages]
   end
 end

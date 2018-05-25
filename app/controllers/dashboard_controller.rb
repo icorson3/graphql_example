@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def show
-    @repos = ProfileInformation.new(current_user).repos
+    @repos = GithubUser.gather_information(current_user).repos
   end
 end
