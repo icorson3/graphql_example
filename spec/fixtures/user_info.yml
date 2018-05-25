@@ -1,0 +1,41 @@
+data:
+  viewer:
+    id: 1234
+    name: "Ilana Corson"
+    avatarUrl: "https://avatars1.githubusercontent.com/u/14942680?v=4"
+    bio: "Turing School"
+    company: "Turing School"
+    pinnedRepositories:
+      edges:
+        node:
+          name: "sass_workshop"
+          stargazers:
+            edges:
+              node:
+                login: "person 1"
+              node:
+                login: "person 2"
+          languages:
+            edges:
+              node:
+                name: "Ruby"
+        node:
+          name: "advanced_enums"
+          stargazers:
+            edges: []
+            languages:
+              edges:
+                node:
+                  name: "CSS"
+    followers:
+      edges:
+        node:
+          name: "icorson3"
+        node:
+          name: "heyyo"
+    following:
+      edges:
+        node:
+          name: "icorson3"
+        node:
+          name: "heyyo"
