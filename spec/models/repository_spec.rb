@@ -1,10 +1,31 @@
 require 'rails_helper'
 
 describe Repository do
-  it "has a name" do
-    raw_data = { node: {id: 123, name: "repo1"} }
-    repo = Repository.new(raw_data)
+  before(:each) do
+    raw_data = {:node=>
+      {:name=>"sass_workshop",
+        :forkCount=>3,
+        :stargazers=>
+          {:edges=>
+            [{:node=>{:login=>"andersklenke"}}]},
+            :languages=>
+              {:edges=>
+                [{:node=>{:name=>"Ruby"}}]}}}
+    @repo = Repository.new(raw_data)
+  end
 
-    expect(repo.name).to eq("repo1")
+
+  it "has a name" do
+    expect(@repo.name).to eq("sass_workshop")
+    expect(@repo.forks).to eq(3)
+    expect(@repo.stargazers).to eq(1)
+    expect(@repo.language).to eq("Ruby")
+  end
+
+  it "can count stargazers" do
+    data = {:stargazers=>
+            {:edges=>
+              [{:node=>{:login=>"andersklenke"}}]}}
+    expect(@repo.count_stargazers(data)).to eq(1)
   end
 end
