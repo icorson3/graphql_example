@@ -9,8 +9,8 @@ describe "as a user" do
 
       within(".popular-repos", match: :first) do
         expect(page).to have_content("Name: sass_workshop")
-        expect(page).to have_content("Forks: 3")
-        expect(page).to have_content("Stargazers: 1")
+        expect(page).to have_content("Forks: 4")
+        expect(page).to have_content("Stargazers: 2")
         expect(page).to have_content("Most used language: Ruby")
       end
     end

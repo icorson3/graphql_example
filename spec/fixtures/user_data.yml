@@ -35,8 +35,8 @@ data:
                 name: "Ruby"
     followers:
       edges:
-        node:
-          name: "hiya"
-          location: "denver"
-          bio: "fun"
-          company: "turing22"
+        - node:
+            name: "hiya"
+            location: "denver"
+            bio: "fun"
+            company: "turing22"
