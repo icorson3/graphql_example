@@ -1,5 +1,6 @@
 class GithubUser
   attr_reader :data
+
   def initialize(data)
     @data = data[:data][:viewer]
   end

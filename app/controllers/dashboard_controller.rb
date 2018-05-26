@@ -4,6 +4,6 @@ class DashboardController < ApplicationController
     @repos = info.repos
     @followers = info.followers
     @following = info.following
-    # @all_repos = info.all_repos
+    @all_repos = info.all_repos
   end
 end

@@ -24,7 +24,7 @@ describe Repository do
     expect(@repo.stargazers).to eq(1)
     expect(@repo.language).to eq("Ruby")
     expect(@repo.is_fork?).to eq(false)
-    expect(@repo.updated_at).to eq("Jan 04, 2017")
+    expect(@repo.updated_at).to eq("Jan 4, 2017")
   end
 
   it "can count stargazers" do

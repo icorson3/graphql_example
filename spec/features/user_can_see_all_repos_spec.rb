@@ -7,9 +7,9 @@ describe "as a user" do
 
       visit "/dashboard"
 
-      expect(page).to have_content("Showing 100 Repos:")
+      expect(page).to have_content("Showing 29 Repos:")
 
-      within(".all-repos", match: :second) do
+      within(".all-repos", match: :first) do
         expect(page).to have_content("Repo: building_internal_apis")
         expect(page).to have_content("Description: ")
         expect(page).to have_content("Forked?: false")
