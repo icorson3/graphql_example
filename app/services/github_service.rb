@@ -52,6 +52,9 @@ private
           edges {
             node {
               name
+              bio
+              company
+              location
             }
           }
         }
@@ -59,6 +62,9 @@ private
           edges {
             node {
               name
+              bio
+              company
+              location
             }
           }
         }

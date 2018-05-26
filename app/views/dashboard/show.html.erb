@@ -1,9 +1,19 @@
 <%= current_user.username %>
+
 <% @repos.each do |repo| %>
 <ul class="popular-repos">
   <li>Name: <%= repo.name %></li>
   <li>Forks: <%= repo.forks %></li>
   <li>Stargazers: <%= repo.stargazers %></li>
   <li>Most used language: <%= repo.language %></li>
+</ul>
+<% end %>
+
+<% @followers.each do |follower| %>
+<ul class="followers">
+  <li>Name: <%= follower.name %></li>
+  <li>Bio: <%= follower.bio %></li>
+  <li>Company: <%= follower.company %></li>
+  <li>Location: <%= follower.location %></li>
 </ul>
 <% end %>

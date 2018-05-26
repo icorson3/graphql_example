@@ -1,12 +1,19 @@
 require 'rails_helper'
 
 describe GithubUser do
-
-  it ".class methods" do
-    VCR.use_cassette("services/get_user_info") do
-      user = stub_omniauth
-      results = GithubUser.gather_information(user)
-      expect(results.data[:name]).to eq("Ilana Corson")
+  describe ".class methods" do
+    it "gather information" do
+      VCR.use_cassette("services/get_user_info") do
+        user = stub_omniauth
+        results = GithubUser.gather_information(user)
+        expect(results.data[:name]).to eq("Ilana Corson")
+      end
+    end
+  end
+  describe "#instance methods" do
+    it "followers" do
+      data = YAML.load_file('spec/fixtures/user_data.yml')
+      results = GithubUser.new(data).followers
     end
   end
 end
