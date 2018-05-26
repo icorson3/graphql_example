@@ -15,7 +15,7 @@ describe GithubUser do
       data = YAML.load_file('spec/fixtures/user_data.yml').deep_symbolize_keys
       results = GithubUser.new(data).followers
 
-      expect(results).to eq([Follower, Follower, Follower])
+      expect(results.first.class).to eq(Follower)
     end
   end
 end
