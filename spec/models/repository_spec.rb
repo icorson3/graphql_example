@@ -5,6 +5,9 @@ describe Repository do
     raw_data = {:node=>
       {:name=>"sass_workshop",
         :forkCount=>3,
+        :isFork=> false,
+        :description=>"heyyo",
+        :updatedAt=> "2017-01-04T18:56:28Z",
         :stargazers=>
           {:edges=>
             [{:node=>{:login=>"andersklenke"}}]},
@@ -20,6 +23,8 @@ describe Repository do
     expect(@repo.forks).to eq(3)
     expect(@repo.stargazers).to eq(1)
     expect(@repo.language).to eq("Ruby")
+    expect(@repo.is_fork?).to eq(false)
+    expect(@repo.updated_at).to eq("Jan 04, 2017")
   end
 
   it "can count stargazers" do
