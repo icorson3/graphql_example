@@ -26,11 +26,41 @@ private
         avatarUrl
         bio
         company
+        repositories(first: 100,  orderBy: {field: CREATED_AT, direction: DESC}, affiliations: OWNER) {
+          edges {
+            node {
+              name
+              updatedAt
+            	isFork
+              forkCount
+              description
+              updatedAt
+              stargazers(first: 10) {
+                edges {
+                  node {
+                    login
+                  }
+                }
+              }
+              languages(first: 1) {
+                edges {
+                  node {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
         pinnedRepositories(first: 6) {
           edges {
             node {
               name
+              updatedAt
+            	isFork
               forkCount
+              description
+              updatedAt
               stargazers(first: 10) {
                 edges {
                   node {

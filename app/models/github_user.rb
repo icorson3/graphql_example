@@ -1,5 +1,6 @@
 class GithubUser
   attr_reader :data
+
   def initialize(data)
     @data = data[:data][:viewer]
   end
@@ -24,6 +25,12 @@ class GithubUser
   def following
     data[:following][:edges].map do |raw_info|
       Follower.new(raw_info)
+    end
+  end
+
+  def all_repos
+    data[:repositories][:edges].map do |raw_info|
+      Repository.new(raw_info)
     end
   end
 end
