@@ -7,6 +7,8 @@ describe "as a user" do
 
       visit "/dashboard"
 
+      expect(page).to have_content("Total Followers: 10")
+
       within(".followers", match: :first) do
         expect(page).to have_content("Name: Henrique Carvalho da Cruz")
         expect(page).to have_content("Bio: Software Developer at @NetloloIncubadora")

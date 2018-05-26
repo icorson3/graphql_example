@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 describe "as a user" do
-  it "can see follower information" do
+  it "can see following information" do
     VCR.use_cassette("services/get_user_info") do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(stub_omniauth)
 
       visit "/dashboard"
+
+      expect(page).to have_content("Total Following: 7")
 
       within(".following", match: :first) do
         expect(page).to have_content("Name: Sal Espinosa")

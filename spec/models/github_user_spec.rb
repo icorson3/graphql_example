@@ -26,7 +26,7 @@ describe GithubUser do
     it "followers" do
       results = GithubUser.new(@data).following
 
-      expect(results.first.class).to eq(Following)
+      expect(results.first.class).to eq(Follower)
       expect(results.first.name).to eq("hiyaf")
       expect(results.first.location).to eq("denverf")
       expect(results.first.bio).to eq("funf")
