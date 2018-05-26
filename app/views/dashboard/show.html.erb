@@ -9,11 +9,22 @@
 </ul>
 <% end %>
 
+<h2>Total Followers: <%= @followers.count %></h2>
 <% @followers.each do |follower| %>
 <ul class="followers">
   <li>Name: <%= follower.name %></li>
   <li>Bio: <%= follower.bio %></li>
   <li>Company: <%= follower.company %></li>
   <li>Location: <%= follower.location %></li>
+</ul>
+<% end %>
+
+<h2>Total Following: <%= @following.count %></h2>
+<% @following.each do |following| %>
+<ul class="following">
+  <li>Name: <%= following.name %></li>
+  <li>Bio: <%= following.bio %></li>
+  <li>Company: <%= following.company %></li>
+  <li>Location: <%= following.location %></li>
 </ul>
 <% end %>

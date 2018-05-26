@@ -20,4 +20,10 @@ class GithubUser
       Follower.new(raw_info)
     end
   end
+
+  def following
+    data[:following][:edges].map do |raw_info|
+      Follower.new(raw_info)
+    end
+  end
 end
