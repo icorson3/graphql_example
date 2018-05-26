@@ -40,3 +40,10 @@ data:
             location: "denver"
             bio: "fun"
             company: "turing22"
+    following:
+      edges:
+        - node:
+            name: "hiyaf"
+            location: "denverf"
+            bio: "funf"
+            company: "turing22f"

@@ -3,5 +3,6 @@ class DashboardController < ApplicationController
     info = GithubUser.gather_information(current_user)
     @repos = info.repos
     @followers = info.followers
+    @following = info.following
   end
 end

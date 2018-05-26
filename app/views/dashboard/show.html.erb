@@ -17,3 +17,12 @@
   <li>Location: <%= follower.location %></li>
 </ul>
 <% end %>
+
+<% @following.each do |following| %>
+<ul class="following">
+  <li>Name: <%= following.name %></li>
+  <li>Bio: <%= following.bio %></li>
+  <li>Company: <%= following.company %></li>
+  <li>Location: <%= following.location %></li>
+</ul>
+<% end %>

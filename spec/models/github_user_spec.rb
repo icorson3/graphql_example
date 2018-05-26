@@ -11,15 +11,26 @@ describe GithubUser do
     end
   end
   describe "#instance methods" do
+    before(:each) do
+      @data = YAML.load_file('spec/fixtures/user_data.yml').deep_symbolize_keys
+    end
     it "followers" do
-      data = YAML.load_file('spec/fixtures/user_data.yml').deep_symbolize_keys
-      results = GithubUser.new(data).followers
+      results = GithubUser.new(@data).followers
 
       expect(results.first.class).to eq(Follower)
       expect(results.first.name).to eq("hiya")
       expect(results.first.location).to eq("denver")
       expect(results.first.bio).to eq("fun")
       expect(results.first.company).to eq("turing22")
+    end
+    it "followers" do
+      results = GithubUser.new(@data).following
+
+      expect(results.first.class).to eq(Following)
+      expect(results.first.name).to eq("hiyaf")
+      expect(results.first.location).to eq("denverf")
+      expect(results.first.bio).to eq("funf")
+      expect(results.first.company).to eq("turing22f")
     end
   end
 end
