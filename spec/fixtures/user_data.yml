@@ -7,35 +7,38 @@ data:
     company: "turing"
     repositories:
       edges:
-        node:
-          name: "sass_workshop"
-          forkCount: 3
-          updatedAt: "2018-05-24T03:19:06Z"
-          isFork: false
-          description: "cool"
-          stargazers:
-            edges:
-              node:
-                login: "hi1"
-              node:
-                login: "t"
-          languages:
-            edges:
-              node:
-                name: "Ruby"
-        node:
-          name: "sass_workshop"
-          forkCount: 3
-          stargazers:
-            edges:
-              node:
-                login: "hi1"
-              node:
-                login: "t"
-          languages:
-            edges:
-              node:
-                name: "Ruby"
+        - node:
+            name: "sass_workshop"
+            updatedAt: "2018-05-24T03:19:06Z"
+            forkCount: 3
+            isFork: false
+            description: "cool"
+            stargazers:
+              edges:
+                - node:
+                    login: "hi1"
+                - node:
+                    login: "t"
+            languages:
+              edges:
+                - node:
+                    name: "Ruby"
+        - node:
+            name: "sass_workshop"
+            forkCount: 3
+            isFork: true
+            description: "cool1"
+            updatedAt: "2018-05-24T03:19:06Z"
+            stargazers:
+              edges:
+                - node:
+                    login: "hi1"
+                - node:
+                    login: "t"
+            languages:
+              edges:
+                - node:
+                    name: "Ruby"
     pinnedRepositories:
       edges:
         node:
