@@ -12,8 +12,10 @@ describe GithubUser do
   end
   describe "#instance methods" do
     it "followers" do
-      data = YAML.load_file('spec/fixtures/user_data.yml')
+      data = YAML.load_file('spec/fixtures/user_data.yml').deep_symbolize_keys
       results = GithubUser.new(data).followers
+
+      expect(results).to eq([Follower, Follower, Follower])
     end
   end
 end
