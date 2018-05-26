@@ -1,5 +1,7 @@
 class DashboardController < ApplicationController
   def show
-    @repos = GithubUser.gather_information(current_user).repos
+    info = GithubUser.gather_information(current_user)
+    @repos = info.repos
+    @followers = info.followers
   end
 end

@@ -1,0 +1,42 @@
+data:
+  viewer:
+    id: 1234
+    name: "Ilana"
+    avatarUrl: "https://avatars1.githubusercontent.com/u/14942680?v=4"
+    bio: "hi"
+    company: "turing"
+    pinnedRepositories:
+      edges:
+        node:
+          name: "sass_workshop"
+          forkCount: 3
+          stargazers:
+            edges:
+              node:
+                login: "hi1"
+              node:
+                login: "t"
+          languages:
+            edges:
+              node:
+                name: "Ruby"
+        node:
+          name: "sass_workshop"
+          forkCount: 3
+          stargazers:
+            edges:
+              node:
+                login: "hi1"
+              node:
+                login: "t"
+          languages:
+            edges:
+              node:
+                name: "Ruby"
+    followers:
+      edges:
+        - node:
+            name: "hiya"
+            location: "denver"
+            bio: "fun"
+            company: "turing22"

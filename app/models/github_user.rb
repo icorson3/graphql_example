@@ -14,4 +14,10 @@ class GithubUser
       Repository.new(raw_repo)
     end
   end
+
+  def followers
+    data[:followers][:edges].map do |raw_info|
+      Follower.new(raw_info)
+    end
+  end
 end
