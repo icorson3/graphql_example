@@ -1,7 +1,6 @@
 class Repository
   attr_reader :name, :owner, :forks, :language, :stargazers
   def initialize(raw_data)
-    @raw_data = raw_data
     @name = raw_data[:node][:name]
     @forks = raw_data[:node][:forkCount]
     @language = raw_data[:node][:languages][:edges].first[:node][:name]

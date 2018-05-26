@@ -14,4 +14,7 @@ class GithubUser
       Repository.new(raw_repo)
     end
   end
+
+  def followers
+  end
 end
