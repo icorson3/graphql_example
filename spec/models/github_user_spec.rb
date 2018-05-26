@@ -32,5 +32,15 @@ describe GithubUser do
       expect(results.first.bio).to eq("funf")
       expect(results.first.company).to eq("turing22f")
     end
+    it "all repos" do
+      results = GithubUser.new(@data).all_repos
+
+      expect(results.first.class).to eq(Repository)
+      expect(results.first.name).to eq("sass_workshop")
+      expect(results.first.forks).to eq("3")
+      expect(results.first.is_fork?).to eq(false)
+      expect(results.first.description).to eq("cool")
+      expect(results.first.updated_at).to eq("May 24, 2018")
+    end
   end
 end
