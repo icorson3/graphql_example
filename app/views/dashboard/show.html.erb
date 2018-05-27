@@ -1,43 +1,10 @@
 <%= current_user.username %>
 
-<% @repos.each do |repo| %>
-<ul class="popular-repos">
-  <li>Name: <%= repo.name %></li>
-  <li>Forks: <%= repo.forks %></li>
-  <li>Stargazers: <%= repo.stargazers %></li>
-  <li>Most used language: <%= repo.language %></li>
-</ul>
-<% end %>
-
+<h2>Popular Repositories</h2>
+<%= render partial: 'repo-info', collection: @pinned_repos, as: :repo, locals: { my_class: 'popular-repos' } %>
 <h2>Total Followers: <%= @followers.count %></h2>
-<% @followers.each do |follower| %>
-<ul class="followers">
-  <li>Name: <%= follower.name %></li>
-  <li>Bio: <%= follower.bio %></li>
-  <li>Company: <%= follower.company %></li>
-  <li>Location: <%= follower.location %></li>
-</ul>
-<% end %>
-
+<%= render partial: 'follow-info', collection: @followers, as: :follow, locals: { my_class: 'followers' } %>
 <h2>Total Following: <%= @following.count %></h2>
-<% @following.each do |following| %>
-<ul class="following">
-  <li>Name: <%= following.name %></li>
-  <li>Bio: <%= following.bio %></li>
-  <li>Company: <%= following.company %></li>
-  <li>Location: <%= following.location %></li>
-</ul>
-<% end %>
-
+<%= render partial: 'follow-info', collection: @following, as: :follow, locals: { my_class: 'following' } %>
 <h2>Showing <%= @all_repos.count %> Repos:</h2>
-<% @all_repos.each do |repo| %>
-<ul class="all-repos">
-  <li>Repo: <%= repo.name %></li>
-  <li>Description: <%= repo.description %></li>
-  <li>Forked?: <%= repo.is_fork? %></li>
-  <li>Stargazers: <%= repo.stargazers %></li>
-  <li>Fork Count: <%= repo.forks %></li>
-  <li>Primary Language: <%= repo.language %></li>
-  <li>Updated on <%= repo.updated_at %></li>
-</ul>
-<% end %>
+<%= render partial: 'repo-info', collection: @all_repos, as: :repo, locals: { my_class: 'all-repos' } %>
