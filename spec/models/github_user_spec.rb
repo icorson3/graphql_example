@@ -38,7 +38,20 @@ describe GithubUser do
       expect(results.first.class).to eq(Repository)
       expect(results.first.name).to eq("sass_workshop")
       expect(results.first.forks).to eq(3)
+      expect(results.first.stargazers).to eq(2)
       expect(results.first.is_fork?).to eq(false)
+      expect(results.first.description).to eq("cool")
+      expect(results.first.updated_at).to eq("May 24, 2018")
+    end
+
+    it "starred repos" do
+      results = GithubUser.new(@data).starred_repos
+
+      expect(results.first.class).to eq(Repository)
+      expect(results.first.name).to eq("sass_workshop star")
+      expect(results.first.forks).to eq(3)
+      expect(results.first.is_fork?).to eq(false)
+      expect(results.first.stargazers).to eq(2)
       expect(results.first.description).to eq("cool")
       expect(results.first.updated_at).to eq("May 24, 2018")
     end

@@ -33,4 +33,10 @@ class GithubUser
       Repository.new(raw_info)
     end
   end
+
+  def starred_repos
+    data[:starredRepositories][:edges].map do |raw_info|
+      Repository.new(raw_info)
+    end
+  end
 end

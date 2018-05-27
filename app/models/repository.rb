@@ -1,8 +1,11 @@
 class Repository
-  attr_reader :name, :owner, :forks, :language, :stargazers, :is_fork, :description, :updated_at
+  attr_reader :name, :owner, :forks, :language,
+              :stargazers, :is_fork, :description,
+              :updated_at
+
   alias_method :is_fork?, :is_fork
+
   def initialize(raw_data)
-    # binding.pry
     @name = raw_data[:node][:name]
     @forks = raw_data[:node][:forkCount]
     @language = raw_data[:node][:languages][:edges].empty? ? "" : raw_data[:node][:languages][:edges].first[:node][:name]
@@ -10,6 +13,7 @@ class Repository
     @is_fork = raw_data[:node][:isFork]
     @description = raw_data[:node][:description]
     @updated_at = DateTime.parse(raw_data[:node][:updatedAt]).strftime("%b %-d, %Y")
+    @owner = raw_data[:node][:owner][:login]
   end
 
   def count_stargazers(stargazers)
