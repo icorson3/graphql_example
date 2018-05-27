@@ -13,7 +13,7 @@ describe "as a user" do
       expect(page).to have_content("Username: icorson3")
       expect(page).to have_content("Name: Ilana Corson")
       expect(page).to have_content("Website:")
-      expect(page).to have_link("http://turing.io")
+      expect(page).to have_link("turing.io")
       expect(page).to have_content("Location: Denver, CO")
       expect(page).to have_content("Bio: Associate Instructor at Turing School")
       expect(page).to have_content("Company: @turingschool")

@@ -3,7 +3,9 @@ require 'rails_helper'
 describe "as a user" do
   it "can see starred repo information" do
     VCR.use_cassette("services/get_user_info") do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(stub_omniauth)
+      user = User.create(uid: 1234, username: "icorson3", token: ENV["GITHUB_TOKEN"])
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit "/dashboard"
 
