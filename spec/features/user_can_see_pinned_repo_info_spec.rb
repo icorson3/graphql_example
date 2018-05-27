@@ -8,10 +8,13 @@ describe "as a user" do
       visit "/dashboard"
 
       within(".popular-repos", match: :first) do
-        expect(page).to have_content("Name: sass_workshop")
-        expect(page).to have_content("Forks: 4")
+        expect(page).to have_content("Repo: sass_workshop")
+        expect(page).to have_content("Description: ")
+        expect(page).to have_content("Forked?: false")
         expect(page).to have_content("Stargazers: 2")
-        expect(page).to have_content("Most used language: Ruby")
+        expect(page).to have_content("Fork Count: 4")
+        expect(page).to have_content("Primary Language: Ruby")
+        expect(page).to have_content("Updated on May 25, 2018")
       end
     end
   end
