@@ -1,4 +1,10 @@
-<%= current_user.username %>
+
+Username: <%= current_user.username %>
+Name: <%= current_user.full_name %>
+<%= link_to "Website: ", current_user.website %>
+Location: <%= current_user.location %>
+Bio: <%= current_user.bio %>
+Company: <%= current_user.company %>
 
 <h2>Popular Repositories</h2>
 <%= render partial: 'repo-info', collection: @pinned_repos, as: :repo, locals: { my_class: 'popular-repos' } %>
