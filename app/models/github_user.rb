@@ -1,41 +1,58 @@
-class GithubUser
-  attr_reader :data
-
-  def initialize(data)
-    @data = data[:data][:viewer]
+class GithubUser < SimpleDelegator
+  def gather_information
+    @service ||= GithubService.gather_information(self)[:data][:viewer]
   end
 
-  def self.gather_information(user)
-    data = GithubService.gather_information(user)
-    new(data)
+  def full_name
+    gather_information[:name]
   end
 
-  def repos
-    data[:pinnedRepositories][:edges].map do |raw_repo|
+  def website
+    gather_information[:websiteUrl]
+  end
+
+  def avatar_url
+    gather_information[:avatarUrl]
+  end
+
+  def bio
+    gather_information[:bio]
+  end
+
+  def location
+    gather_information[:location]
+  end
+
+  def company
+    gather_information[:company]
+  end
+
+  def pinned_repos
+    gather_information[:pinnedRepositories][:edges].map do |raw_repo|
       Repository.new(raw_repo)
     end
   end
 
   def followers
-    data[:followers][:edges].map do |raw_info|
+    gather_information[:followers][:edges].map do |raw_info|
       Follower.new(raw_info)
     end
   end
 
   def following
-    data[:following][:edges].map do |raw_info|
+    gather_information[:following][:edges].map do |raw_info|
       Follower.new(raw_info)
     end
   end
 
   def all_repos
-    data[:repositories][:edges].map do |raw_info|
+    gather_information[:repositories][:edges].map do |raw_info|
       Repository.new(raw_info)
     end
   end
 
   def starred_repos
-    data[:starredRepositories][:edges].map do |raw_info|
+    gather_information[:starredRepositories][:edges].map do |raw_info|
       Repository.new(raw_info)
     end
   end
