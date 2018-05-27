@@ -2,9 +2,11 @@
 
 <h2>Popular Repositories</h2>
 <%= render partial: 'repo-info', collection: @pinned_repos, as: :repo, locals: { my_class: 'popular-repos' } %>
+<h2>Showing <%= @all_repos.count %> Repos:</h2>
+<%= render partial: 'repo-info', collection: @all_repos, as: :repo, locals: { my_class: 'all-repos' } %>
+<h2>Starred Repositories</h2>
+<%= render partial: 'repo-info', collection: @starred_repos, as: :repo, locals: { my_class: 'starred-repos' } %>
 <h2>Total Followers: <%= @followers.count %></h2>
 <%= render partial: 'follow-info', collection: @followers, as: :follow, locals: { my_class: 'followers' } %>
 <h2>Total Following: <%= @following.count %></h2>
 <%= render partial: 'follow-info', collection: @following, as: :follow, locals: { my_class: 'following' } %>
-<h2>Showing <%= @all_repos.count %> Repos:</h2>
-<%= render partial: 'repo-info', collection: @all_repos, as: :repo, locals: { my_class: 'all-repos' } %>

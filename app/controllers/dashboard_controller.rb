@@ -5,5 +5,6 @@ class DashboardController < ApplicationController
     @followers = info.followers
     @following = info.following
     @all_repos = info.all_repos
+    @starred_repos = info.starred_repos
   end
 end

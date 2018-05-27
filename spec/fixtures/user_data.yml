@@ -13,6 +13,46 @@ data:
             forkCount: 3
             isFork: false
             description: "cool"
+            owner:
+              login: "helllo"
+            stargazers:
+              edges:
+                - node:
+                    login: "hi1"
+                - node:
+                    login: "t"
+            languages:
+              edges:
+                - node:
+                    name: "Ruby"
+        - node:
+            name: "sass_workshop"
+            forkCount: 3
+            isFork: true
+            description: "cool1"
+            owner:
+              login: "helllo"
+            updatedAt: "2018-05-24T03:19:06Z"
+            stargazers:
+              edges:
+                - node:
+                    login: "hi1"
+                - node:
+                    login: "t"
+            languages:
+              edges:
+                - node:
+                    name: "Ruby"
+    starredRepositories:
+      edges:
+        - node:
+            name: "sass_workshop star"
+            updatedAt: "2018-05-24T03:19:06Z"
+            forkCount: 3
+            isFork: false
+            description: "cool"
+            owner:
+              login: "helllo"
             stargazers:
               edges:
                 - node:
@@ -29,6 +69,8 @@ data:
             isFork: true
             description: "cool1"
             updatedAt: "2018-05-24T03:19:06Z"
+            owner:
+              login: "helllo11"
             stargazers:
               edges:
                 - node:
@@ -44,6 +86,8 @@ data:
         node:
           name: "sass_workshop"
           forkCount: 3
+          owner:
+            login: "helllo"
           stargazers:
             edges:
               node:
@@ -57,6 +101,8 @@ data:
         node:
           name: "sass_workshop"
           forkCount: 3
+          owner:
+            login: "helllo"
           stargazers:
             edges:
               node:
