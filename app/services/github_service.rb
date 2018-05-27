@@ -21,8 +21,9 @@ private
   def query
     {query: "{
       viewer {
-        id
         name
+        location
+        websiteUrl
         avatarUrl
         bio
         company
