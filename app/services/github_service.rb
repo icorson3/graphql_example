@@ -26,7 +26,7 @@ private
         avatarUrl
         bio
         company
-        repositories(first: 100,  orderBy: {field: CREATED_AT, direction: DESC}, affiliations: OWNER) {
+        repositories(first: 100,  orderBy: {field: UPDATED_AT, direction: DESC}, affiliations: OWNER) {
           edges {
             node {
               name
