@@ -3,14 +3,22 @@
     <%= image_tag 'octo.png', class: 'gh-logo' %>
   </div>
 </nav>
-<div class="personal-info">
-  <%= image_tag @user.avatar_url, class: 'user-picture' %></br>
-  Name: <%= @user.full_name %></br>
-  Username: <%= @user.username %></br>
-  Website: <%= link_to @user.website, @user.website %></br>
-  Location: <%= @user.location %></br>
-  Bio: <%= @user.bio %></br>
-  Company: <%= @user.company %></br>
+<div class="big-info">
+  <div class="personal-info">
+    <%= image_tag @user.avatar_url, class: 'user-picture' %></br>
+    Name: <%= @user.full_name %></br>
+    Username: <%= @user.username %></br>
+    Website: <%= link_to @user.website, @user.website %></br>
+    Location: <%= @user.location %></br>
+    Bio: <%= @user.bio %></br>
+    Company: <%= @user.company %></br>
+  </div>
+  <h2>Activity Feed (showing 10 most recent events):</h2>
+  <div class="activity-feed">
+    <% @user.activity_feed.first(10).each do |feed| %>
+    <p>- Created a <%= feed.type %> on <%= feed.created_at %> in <%= link_to feed.repo, "https:github.com/#{feed.repo}" %></p>
+    <% end %>
+  </div>
 </div>
 <h2>Pinned Repositories</h2>
 <div class="pop-repos-outer">
@@ -33,10 +41,4 @@
 <h2>Total Following: <%= @user.following.count %></h2>
 <div class="following-outer">
   <%= render partial: 'follow-info', collection: @user.following, as: :follow, locals: { my_class: 'following' } %>
-</div>
-
-<div class="activity-feed">
-  <% @user.activity_feed.each do |feed| %>
-    <p>Created a <%= feed.type %> Event on <%= feed.created_at %> in <%= link_to feed.repo, "https:github.com/#{feed.repo}" %></p>
-  <% end %>
 </div>

@@ -15,9 +15,17 @@
 
 .personal-info {
   margin-left: 100px;
+  margin-right: 15px;
+  display: inline;
+  float: left;
   .user-picture {
     width: 200px;
   }
+}
+
+.activity_feed {
+  display: inline;
+  float: right;
 }
 
 .follow-pict {

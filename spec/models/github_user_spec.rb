@@ -38,7 +38,7 @@ describe GithubUser do
       expect(results.first.name).to eq("Sal Espinosa")
       expect(results.first.location).to eq("United States")
       expect(results.first.bio).to eq("Web Dev in Denver, CO")
-      expect(results.first.company).to eq("")
+      expect(results.first.company).to eq("No company provided")
     end
     end
     it "all repos" do
@@ -51,7 +51,7 @@ describe GithubUser do
       expect(results.first.forks).to eq(4)
       expect(results.first.stargazers).to eq(2)
       expect(results.first.is_fork?).to eq(false)
-      expect(results.first.description).to eq(nil)
+      expect(results.first.description).to eq("No description provided")
       expect(results.first.updated_at).to eq("May 25, 2018")
     end
   end
@@ -66,7 +66,7 @@ describe GithubUser do
       expect(results.first.forks).to eq(0)
       expect(results.first.is_fork?).to eq(false)
       expect(results.first.stargazers).to eq(1)
-      expect(results.first.description).to eq(nil)
+      expect(results.first.description).to eq("No description provided")
       expect(results.first.updated_at).to eq("Jun 7, 2016")
     end
     end

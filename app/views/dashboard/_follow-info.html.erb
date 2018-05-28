@@ -1,7 +1,7 @@
 <ul class="<%= my_class %>">
   <%= image_tag follow.avatar_url, class: "follow-pict" %>
-  <li>Name: <%= follow.name %></li>
-  <li>Login: <%= follow.login %></li>
+  <li>Name: <%= link_to follow.name, "https://github.com/#{follow.login}", target: "_blank" %></li>
+  <li>Login: <%= link_to follow.login, "https://github.com/#{follow.login}", target: "_blank" %></li>
   <li>Bio: <%= follow.bio %></li>
   <li>Company: <%= follow.company %></li>
   <li>Location: <%= follow.location %></li>
