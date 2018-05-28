@@ -1,0 +1,69 @@
+
+.nav1 {
+  background-color: black;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  .gh-logo {
+    width: 60px;
+    align-self: center;
+  }
+}
+
+.personal-info {
+  margin-left: 100px;
+  .user-picture {
+    width: 200px;
+  }
+}
+
+.follow-pict {
+  width: 75px;
+}
+.pop-repos-outer {
+  display: flex;
+  flex-flow: row wrap;
+  .popular-repos {
+    margin: 10px;
+    width: 350px;
+  }
+}
+
+.all-repos-outer {
+  display: flex;
+  flex-flow: row wrap;
+  .all-repos {
+    margin: 10px;
+    width: 350px;
+  }
+}
+
+.starred-repos-outer {
+  display: flex;
+  flex-flow: row wrap;
+  .starred-repos {
+    margin: 10px;
+    width: 350px;
+  }
+}
+
+.follower-outer {
+  display: flex;
+  flex-flow: row wrap;
+  .followers {
+    margin: 10px;
+    width: 200px;
+  }
+}
+
+.following-outer {
+  display: flex;
+  flex-flow: row wrap;
+  .following {
+    margin: 10px;
+    width: 200px;
+  }
+}
