@@ -113,6 +113,8 @@ private
         followers(first: 10) {
           edges {
             node {
+              login
+              avatarUrl
               name
               bio
               company
@@ -123,6 +125,8 @@ private
         following(first: 10) {
           edges {
             node {
+              login
+              avatarUrl
               name
               bio
               company

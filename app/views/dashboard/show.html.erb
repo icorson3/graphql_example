@@ -1,17 +1,36 @@
-
-Username: <%= @user.username %></br>
-Name: <%= @user.full_name %></br>
-Website: <%= link_to @user.website, @user.website %></br>
-Location: <%= @user.location %></br>
-Bio: <%= @user.bio %></br>
-Company: <%= @user.company %></br>
+<nav>
+  <div class="navbar-nav nav1">
+    <%= image_tag 'octo.png', class: 'gh-logo' %>
+  </div>
+</nav>
+<div class="personal-info">
+  <%= image_tag @user.avatar_url, class: 'user-picture' %></br>
+  Name: <%= @user.full_name %></br>
+  Username: <%= @user.username %></br>
+  Website: <%= link_to @user.website, @user.website %></br>
+  Location: <%= @user.location %></br>
+  Bio: <%= @user.bio %></br>
+  Company: <%= @user.company %></br>
+</div>
 <h2>Popular Repositories</h2>
-<%= render partial: 'repo-info', collection: @user.pinned_repos, as: :repo, locals: { my_class: 'popular-repos' } %>
+<div class="pop-repos-outer">
+  <%= render partial: 'repo-info', collection: @user.pinned_repos, as: :repo, locals: { my_class: 'popular-repos' } %>
+</div>
+
+
 <h2>Showing <%= @user.all_repos.count %> Repos:</h2>
-<%= render partial: 'repo-info', collection: @user.all_repos, as: :repo, locals: { my_class: 'all-repos' } %>
+<div class="all-repos-outer">
+  <%= render partial: 'repo-info', collection: @user.all_repos, as: :repo, locals: { my_class: 'all-repos' } %>
+</div>
 <h2>Starred Repositories</h2>
-<%= render partial: 'repo-info', collection: @user.starred_repos, as: :repo, locals: { my_class: 'starred-repos' } %>
+<div class="starred-repos-outer">
+  <%= render partial: 'repo-info', collection: @user.starred_repos, as: :repo, locals: { my_class: 'starred-repos' } %>
+</div>
 <h2>Total Followers: <%= @user.followers.count %></h2>
-<%= render partial: 'follow-info', collection: @user.followers, as: :follow, locals: { my_class: 'followers' } %>
+<div class="follower-outer">
+  <%= render partial: 'follow-info', collection: @user.followers, as: :follow, locals: { my_class: 'followers' } %>
+</div>
 <h2>Total Following: <%= @user.following.count %></h2>
-<%= render partial: 'follow-info', collection: @user.following, as: :follow, locals: { my_class: 'following' } %>
+<div class="following-outer">
+  <%= render partial: 'follow-info', collection: @user.following, as: :follow, locals: { my_class: 'following' } %>
+</div>

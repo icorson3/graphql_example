@@ -1,10 +1,13 @@
 class Follower
-  attr_reader :name, :bio, :location, :company
+  attr_reader :name, :bio, :location,
+              :company, :login, :avatar_url
+
   def initialize(data)
     @name = data[:node][:name]
     @bio = data[:node][:bio]
     @location = data[:node][:location]
     @company = data[:node][:company]
+    @login = data[:node][:login]
+    @avatar_url = data[:node][:avatarUrl]
   end
-
 end
