@@ -21,120 +21,102 @@ private
   def query
     {query: "{
       viewer {
-        name
-        location
+        #{user_info}
         websiteUrl
-        avatarUrl
-        bio
-        company
-        repositories(first: 100,  orderBy: {field: UPDATED_AT, direction: DESC}, affiliations: OWNER) {
-          edges {
-            node {
-              name
-              updatedAt
-            	isFork
-              forkCount
-              description
-              owner {
-                login
-              }
-              stargazers(first: 10) {
-                edges {
-                  node {
-                    login
-                  }
-                }
-              }
-              languages(first: 1) {
-                edges {
-                  node {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-        starredRepositories(first: 100, orderBy:{field: STARRED_AT, direction: DESC}) {
-          edges {
-            node {
-              name
-              updatedAt
-              isFork
-              forkCount
-              owner {
-                login
-              }
-              stargazers(first: 10) {
-                edges {
-                  node {
-                    login
-                  }
-                }
-              }
-              languages(first: 1) {
-                edges {
-                  node {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-        pinnedRepositories(first: 6) {
-          edges {
-            node {
-              name
-              updatedAt
-            	isFork
-              forkCount
-              description
-              owner {
-                login
-              }
-              stargazers(first: 10) {
-                edges {
-                  node {
-                    login
-                  }
-                }
-              }
-              languages(first: 1) {
-                edges {
-                  node {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-        followers(first: 10) {
-          edges {
-            node {
-              login
-              avatarUrl
-              name
-              bio
-              company
-              location
-            }
-          }
-        }
-        following(first: 10) {
-          edges {
-            node {
-              login
-              avatarUrl
-              name
-              bio
-              company
-              location
-            }
-          }
-        }
+        #{all_repos}
+        #{starred_repos}
+        #{pinned_repos}
+        #{followers}
+        #{following}
       }
       }"}.to_json
+  end
+
+  def all_repos
+    "repositories(first: 100,  orderBy: {field: UPDATED_AT, direction: DESC}, affiliations: OWNER) {
+      #{repo_edges}
+    }"
+  end
+
+  def starred_repos
+    "starredRepositories(first: 100, orderBy:{field: STARRED_AT, direction: DESC}) {
+      #{repo_edges}
+    }"
+  end
+
+  def pinned_repos
+    "pinnedRepositories(first: 6) {
+      #{repo_edges}
+    }"
+  end
+
+  def languages
+    "languages(first: 1) {
+      edges {
+        node {
+          name
+        }
+      }
+    }"
+  end
+
+  def repo_edges
+    "edges {
+      node {
+        name
+        updatedAt
+        isFork
+        forkCount
+        description
+        #{owner}
+        #{stargazers}
+        #{languages}
+      }
+    }"
+  end
+
+  def owner
+    "owner {
+      login
+    }"
+  end
+
+  def stargazers
+    "stargazers(first: 10) {
+      edges {
+        node {
+          login
+        }
+      }
+    }"
+  end
+
+  def user_info
+    "name
+    location
+    avatarUrl
+    bio
+    company"
+  end
+
+  def followers
+    "followers(first: 10) {
+      #{follower_edges}
+    }"
+  end
+
+  def following
+    "following(first: 10) {
+      #{follower_edges}
+    }"
+  end
+
+  def follower_edges
+    "edges {
+      node {
+        login
+        #{user_info}
+      }
+    }"
   end
 end
