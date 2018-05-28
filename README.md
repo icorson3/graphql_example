@@ -23,7 +23,17 @@ GITHUB_TOKEN: 6ee2ddf5e85cab52c6ba0e29aae87fba8764ec5b
 ```
 
 - You will want to add these keys to your environment in a file that does not get pushed up to GitHub. I recommend using the gem figaro as it is already installed in this repository. To use figaro in this application, run `bundle exec figaro install` from the root of the project and it will create a `application.yml` file and add it to your `.gitignore` file.
+- Your `application.yml` file should look like this:
+
+```ruby
+#config/application.yml
+GITHUB_CLIENT_ID: 681455f47bae023a36d6
+GITHUB_CLIENT_SECRET: 8897d8ef485545209e1917443d724f41213bf36f
+GITHUB_TOKEN: 6ee2ddf5e85cab52c6ba0e29aae87fba8764ec5b
+```
+
 - To run the test suite, run the command `rspec` at the root of the project from the terminal.
+
 
 ## Comments
 
