@@ -67,3 +67,18 @@
     width: 200px;
   }
 }
+
+.login-outer {
+  margin-top: 100px;
+  height: 150px;
+  background-color: black;
+  text-align: center;
+  .login {
+    margin-top: 30px;
+    font-size: 30px;
+    display: block;
+  }
+  .gh-logo {
+    height: 70px;
+  }
+}
