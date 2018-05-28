@@ -56,4 +56,14 @@ class GithubUser < SimpleDelegator
       Repository.new(raw_info)
     end
   end
+
+  def activity_feed
+    v3_gather_information.map do |raw_info|
+      Feed.new(raw_info)
+    end
+  end
+
+  def v3_gather_information
+    @v3_service = V3GithubService.gather_information(self)
+  end
 end

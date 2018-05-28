@@ -34,3 +34,9 @@
 <div class="following-outer">
   <%= render partial: 'follow-info', collection: @user.following, as: :follow, locals: { my_class: 'following' } %>
 </div>
+
+<div class="activity-feed">
+  <% @user.activity_feed.each do |feed| %>
+    <p>Created a <%= feed.type %> Event on <%= feed.created_at %> in <%= link_to feed.repo, "https:github.com/#{feed.repo}" %></p>
+  <% end %>
+</div>

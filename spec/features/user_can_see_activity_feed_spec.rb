@@ -10,7 +10,7 @@ describe "as a user" do
       visit "/dashboard"
 
       within(".activity-feed", match: :first) do
-        expect(page).to have_content("Created 16 commits in 5 repositories.")
+        expect(page).to have_content("Created a WatchEvent Event on May 24, 2018 in icorson3/sass_workshop")
       end
     end
   end
