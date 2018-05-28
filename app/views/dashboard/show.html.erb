@@ -12,7 +12,7 @@
   Bio: <%= @user.bio %></br>
   Company: <%= @user.company %></br>
 </div>
-<h2>Popular Repositories</h2>
+<h2>Pinned Repositories</h2>
 <div class="pop-repos-outer">
   <%= render partial: 'repo-info', collection: @user.pinned_repos, as: :repo, locals: { my_class: 'popular-repos' } %>
 </div>

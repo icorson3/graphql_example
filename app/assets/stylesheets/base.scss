@@ -28,6 +28,7 @@
   flex-flow: row wrap;
   .popular-repos {
     margin: 10px;
+    height: 250px;
     width: 350px;
   }
 }
@@ -37,6 +38,7 @@
   flex-flow: row wrap;
   .all-repos {
     margin: 10px;
+    height: 250px;
     width: 350px;
   }
 }
@@ -46,6 +48,7 @@
   flex-flow: row wrap;
   .starred-repos {
     margin: 10px;
+    height: 250px;
     width: 350px;
   }
 }
@@ -57,6 +60,10 @@
     margin: 10px;
     width: 200px;
   }
+}
+
+.repo-style {
+  border: 1px solid gray;
 }
 
 .following-outer {
