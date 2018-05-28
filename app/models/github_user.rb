@@ -64,6 +64,6 @@ class GithubUser < SimpleDelegator
   end
 
   def v3_gather_information
-    @v3_service = V3GithubService.gather_information(self)
+    @v3_service ||= V3GithubService.gather_information(self)
   end
 end
