@@ -3,7 +3,7 @@ class Follower
               :company, :login, :avatar_url
 
   def initialize(data)
-    @name = data[:node][:name].empty? ? "No name provided" : data[:node][:name]
+    @name = data[:node][:name] == "" ? "No name provided" : data[:node][:name]
     @bio = data[:node][:bio] == "" ? "No bio provided" : data[:node][:bio]
     @location = data[:node][:location].nil? ? "No location provided" : data[:node][:location]
     @company = data[:node][:company] == "" ? "No company provided" : data[:node][:company]
