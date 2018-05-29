@@ -16,7 +16,7 @@
   <h2>Activity Feed (showing 10 most recent events):</h2>
   <div class="activity-feed">
     <% @user.activity_feed.first(10).each do |feed| %>
-    <p>- Created a <%= feed.type %> on <%= feed.created_at %> in <%= link_to feed.repo, "https:github.com/#{feed.repo}" %></p>
+    <p>- Created a <%= feed.type %> on <%= feed.created_at %> in <%= link_to feed.repo, "https://github.com/#{feed.repo}" %></p>
     <% end %>
   </div>
 </div>

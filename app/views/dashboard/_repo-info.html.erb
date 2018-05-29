@@ -1,5 +1,5 @@
 <ul class='<%= my_class %> repo-style'>
-  <h3>Repo: <%= repo.name %></h3>
+  <h3>Repo: <%= link_to repo.name, "https://github.com/#{@user.username}/#{repo.name}", target: "_blank"%></h3>
   <li>Description: <%= repo.description %></li>
   <li>Forked?: <%= repo.is_fork? %></li>
   <li>Stargazers: <%= repo.stargazers %></li>
