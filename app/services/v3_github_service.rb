@@ -1,8 +1,8 @@
 class V3GithubService
-
   def initialize(user)
     @user = user
   end
+
   def self.gather_information(user)
     new(user).activity_feed
   end
