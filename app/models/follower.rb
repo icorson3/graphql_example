@@ -1,12 +1,11 @@
-class Follower
+class Follower < GithubModels
   attr_reader :name, :bio, :location,
               :company, :login, :avatar_url
-
   def initialize(data)
-    @name = data[:node][:name] == "" ? "No name provided" : data[:node][:name]
-    @bio = data[:node][:bio] == "" ? "No bio provided" : data[:node][:bio]
-    @location = data[:node][:location].nil? ? "No location provided" : data[:node][:location]
-    @company = data[:node][:company] == "" ? "No company provided" : data[:node][:company]
+    @name = determine_if_empty(data[:node][:name])
+    @bio = determine_if_empty(data[:node][:bio])
+    @location = determine_if_empty(data[:node][:location])
+    @company = determine_if_empty(data[:node][:company])
     @login = data[:node][:login]
     @avatar_url = data[:node][:avatarUrl]
   end

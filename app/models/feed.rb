@@ -1,8 +1,8 @@
-class Feed
+class Feed < GithubModels
   attr_reader :type, :created_at, :repo
   def initialize(data)
     @type = data[:type]
-    @created_at = DateTime.parse(data[:created_at]).strftime("%b %-d, %Y")
+    @created_at = parse_for_reading(data[:created_at])
     @repo = data[:repo][:name]
   end
 end
